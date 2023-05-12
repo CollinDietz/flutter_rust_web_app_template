@@ -1,6 +1,3 @@
-
-cd native/ && cargo build
-
 export RUSTUP_TOOLCHAIN=nightly
 export RUSTFLAGS='-C target-feature=+atomics,+bulk-memory,+mutable-globals'
 
