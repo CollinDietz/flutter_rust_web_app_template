@@ -21,4 +21,9 @@ clean:
 serve *args='':
     flutter pub run flutter_rust_bridge:serve {{args}}
 
+run_web: serve
+
+run_mac: gen
+    flutter run -d mac
+
 # vim:expandtab:sw=4:ts=4
