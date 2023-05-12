@@ -1,0 +1,25 @@
+name: deploy
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch to release'
+        required: true
+        type: string
+        default: 'main'
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.inputs.branch }}
+      - uses: subosito/flutter-action@v1
+      - run: sh build-scripts/build.sh
+      - uses: bluefireteam/flutter-gh-pages@v7
+        with:
+          baseHref: /flutter_rust_static_web_app_template/
