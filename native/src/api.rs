@@ -1,3 +1,6 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+
 // This is the entry point of your Rust library.
 // When adding new code to your project, note that only items used
 // here will be transformed to their Dart equivalents.
